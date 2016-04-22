@@ -7,7 +7,7 @@
 # ./Get-S3BucketCommonPrefixes.ps1 -BucketName 'myBucket'
 #
 # Get all directories recursively:
-# ./Get-S3BucketCommonPrefixes.ps1 -BucketName 'myBucket' -Recurse $true
+# ./Get-S3BucketCommonPrefixes.ps1 -BucketName 'myBucket' -Recurse
 #
 # EXAMPLE OUTPUT:
 # myprefix/
@@ -20,9 +20,9 @@
 param
 (
   [string] $BucketName,
-  [bool] $Recurse = $false
+  [Switch] $Recurse
 )
 
 . ./lib.ps1
 
-Get-S3BucketCommonPrefixes -BucketName $BucketName -Recurse $Recurse
+Get-S3BucketCommonPrefixes @psBoundParameters

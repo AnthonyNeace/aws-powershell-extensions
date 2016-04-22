@@ -7,11 +7,11 @@
 # USAGE:
 # Get all top-level directories:
 # . ./lib.ps1
-# Get-S3BucketCommonPrefixes -BucketName 'myBucket' -KeyPrefix '/'
+# Get-S3BucketCommonPrefixes -BucketName 'myBucket'
 #
 # Get all directories recursively:
 # . ./lib.ps1
-# Get-S3BucketCommonPrefixes -BucketName 'myBucket' -KeyPrefix '/' -Recurse $true
+# Get-S3BucketCommonPrefixes -BucketName 'myBucket' -Recurse
 #
 # EXAMPLE OUTPUT:
 # myprefix/
@@ -25,8 +25,8 @@ function Get-CommonPrefixes
   param
   (
     [string] $BucketName,
-    [string] $KeyPrefix,
-    [bool] $Recurse
+    [string] $KeyPrefix = '/',
+    [Switch] $Recurse
   )
 
   @(get-s3object -BucketName $BucketName -KeyPrefix $KeyPrefix -Delimiter '/') | Out-Null
@@ -50,7 +50,7 @@ function Get-CommonPrefixes
 #
 # Get all directories recursively:
 # . ./lib.ps1
-# Get-S3BucketCommonPrefixes -BucketName 'myBucket' -Recurse $true
+# Get-S3BucketCommonPrefixes -BucketName 'myBucket' -Recurse
 #
 # EXAMPLE OUTPUT:
 # myprefix/
@@ -64,8 +64,8 @@ function Get-S3BucketCommonPrefixes
   param
   (
     [string] $BucketName,
-	[bool] $Recurse = $false
+	[Switch] $Recurse
   )
   
-  Get-CommonPrefixes -BucketName $BucketName -KeyPrefix '/' -Recurse $Recurse
+  Get-CommonPrefixes @psBoundParameters
 }
