@@ -1,13 +1,13 @@
-# Get-S3BucketCommonPrefixes.ps1
+# Get-S3ObjectCommonPrefixes.ps1
 # --------------------------------------------------------------------------------
 # Get all virtual directories/folders (called "Common Prefixes") in a bucket 
 # 
 # USAGE:
 # Get all top-level directories:
-# ./Get-S3BucketCommonPrefixes.ps1 -BucketName 'myBucket'
+# ./Get-S3ObjectCommonPrefixes.ps1 -BucketName 'myBucket'
 #
 # Get all directories recursively:
-# ./Get-S3BucketCommonPrefixes.ps1 -BucketName 'myBucket' -Recurse
+# ./Get-S3ObjectCommonPrefixes.ps1 -BucketName 'myBucket' -Recurse
 #
 # EXAMPLE OUTPUT:
 # myprefix/
@@ -25,4 +25,4 @@ param
 
 . ./lib.ps1
 
-Get-S3BucketCommonPrefixes @psBoundParameters
+Get-S3ObjectCommonPrefixes @psBoundParameters

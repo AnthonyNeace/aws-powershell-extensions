@@ -1,17 +1,17 @@
 # lib.ps1
 # --------------------------------------------------------------------------------
-# Library of methods related to Get-S3BucketCommonPrefixes 
+# Library of methods related to Get-S3ObjectCommonPrefixes 
 # --------------------------------------------------------------------------------
 
 # --------------------------------------------------------------------------------
 # USAGE:
 # Get all top-level directories:
 # . ./lib.ps1
-# Get-S3BucketCommonPrefixes -BucketName 'myBucket'
+# Get-S3ObjectCommonPrefixes -BucketName 'myBucket'
 #
 # Get all directories recursively:
 # . ./lib.ps1
-# Get-S3BucketCommonPrefixes -BucketName 'myBucket' -Recurse
+# Get-S3ObjectCommonPrefixes -BucketName 'myBucket' -Recurse
 #
 # EXAMPLE OUTPUT:
 # myprefix/
@@ -46,11 +46,11 @@ function Get-CommonPrefixes
 # USAGE:
 # Get all top-level directories:
 # . ./lib.ps1
-# Get-S3BucketCommonPrefixes -BucketName 'myBucket'
+# Get-S3ObjectCommonPrefixes -BucketName 'myBucket'
 #
 # Get all directories recursively:
 # . ./lib.ps1
-# Get-S3BucketCommonPrefixes -BucketName 'myBucket' -Recurse
+# Get-S3ObjectCommonPrefixes -BucketName 'myBucket' -Recurse
 #
 # EXAMPLE OUTPUT:
 # myprefix/
@@ -59,7 +59,7 @@ function Get-CommonPrefixes
 # myotherprefix/
 # ...
 # --------------------------------------------------------------------------------
-function Get-S3BucketCommonPrefixes
+function Get-S3ObjectCommonPrefixes
 {
   param
   (
