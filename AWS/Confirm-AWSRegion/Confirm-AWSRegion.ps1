@@ -7,12 +7,10 @@
 # 
 # USAGE:
 # Return True:
-# . ./lib.ps1
-# Confirm-AWSRegion -Region 'us-east-1'
+# ./Confirm-AWSRegion.ps1 -Region 'us-east-1'
 #
 # Return False:
-# . ./lib.ps1
-# Confirm-AWSRegion -Region 'us-east-banana'
+# ./Confirm-AWSRegion.ps1 -Region 'us-east-banana'
 #
 # EXAMPLE OUTPUT:
 # Boolean true/false, depending on success
