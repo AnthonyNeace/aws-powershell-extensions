@@ -19,7 +19,7 @@
 [CmdletBinding()]
 param
 (
-  [string] $BucketName,
+  [Parameter(Mandatory=$true)][string] $BucketName,
   [Switch] $Recurse
 )
 

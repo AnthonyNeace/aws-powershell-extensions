@@ -24,7 +24,7 @@ function Get-CommonPrefixes
 {
   param
   (
-    [string] $BucketName,
+    [Parameter(Mandatory=$true)][string] $BucketName,
     [string] $KeyPrefix = '/',
     [Switch] $Recurse
   )
@@ -63,7 +63,7 @@ function Get-S3BucketCommonPrefixes
 {
   param
   (
-    [string] $BucketName,
+    [Parameter(Mandatory=$true)][string] $BucketName,
 	[Switch] $Recurse
   )
   
